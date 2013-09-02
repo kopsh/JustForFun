@@ -83,8 +83,6 @@ int builtin_command(char **argv)
 {
 	if(!strcmp(argv[0], "quit")) /* quit command */
 		exit(0);
-	if(!strcmp(argv[0], "ps"))
-		return 1;
 	if(!strcmp(argv[0], "&"))    /* Ignore singleton */
 		return 1;
 	return 0;					 /* Not a builtin command */
