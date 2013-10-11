@@ -55,7 +55,6 @@ void *thread(void *vargp)
 	{
 		while((n = Rio_readlineb(&rio, buf, MAXLINE)) != 0)
 		{
-			printf("hehe\n");
 			printf("%s", buf);	
 		}
 	}
