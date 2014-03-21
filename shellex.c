@@ -101,10 +101,7 @@ int parseline(char *buf, char **argv)
 
 	/* Build the argv list */
 	argc = 0;
-	while((delim = strchr(buf, ' ')))
-	{
-		argv[argc++] = buf;
-		*delim = '\0';
+	while((delim = 
 		buf = delim + 1;
 		while(*buf && (*buf == ' '))
 			buf++;

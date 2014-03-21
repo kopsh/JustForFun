@@ -36,6 +36,7 @@ int main()
 				scanf("%s", cip);
 				inet_aton(cip, &in);
 				inip = ntohl(in.s_addr);
+			
 				printf("%x\n", inip);
 			}
 			else{
