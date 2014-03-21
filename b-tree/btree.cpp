@@ -133,6 +133,7 @@ TreeNode* spilt(TreeNode *node, int val)
         {
             k2.insert(k2.begin(), key);
             c2.insert(c2.begin(), child);
+            child->parent = temp_node;
 
             k1.pop_back();
             c1.pop_back();
@@ -143,7 +144,8 @@ TreeNode* spilt(TreeNode *node, int val)
 
         k1.pop_back();
         c2.insert(c2.begin(), child);
-        c2.pop_back();
+        child->parent = temp_node;
+        c1.pop_back();
     }
     else
     {
@@ -157,7 +159,6 @@ TreeNode* spilt(TreeNode *node, int val)
         }
         k1.pop_back();
     }
-
 	if(val > mid)
 		return temp_node;
 	return node;
@@ -200,7 +201,7 @@ void print_tree(TreeNode *root)
 				cout << endl;
 			}
 			else
-				cout << " | ";
+				cout << "| ";
 		}
 	}
 }
@@ -214,12 +215,16 @@ int main()
 	insert_node(root, 4);
 	insert_node(root, 5);
 	insert_node(root, 6);
+
 	insert_node(root, 7);
 	insert_node(root, 8);
 	insert_node(root, 9);
 	insert_node(root, 10);
 	insert_node(root, 11);
 	insert_node(root, 12);
+	insert_node(root, 13);
+	insert_node(root, 14);
+	insert_node(root, 15);
 	print_tree(root);
 	delete root;
 }
